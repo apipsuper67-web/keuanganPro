@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KonterPro - Aplikasi Kasir, Scan IMEI & Stok Toko HP UMKM</title>
+  <meta name="description" content="Aplikasi kasir digital, scan barcode IMEI, manajemen multi-varian stok, dan laporan laba bersih otomatis yang dirancang khusus untuk pemilik counter HP di Indonesia. Coba gratis 14 hari!">
+  <meta name="keywords" content="aplikasi kasir counter hp, software toko hp umkm, aplikasi pencatatan imei, pos counter hp, aplikasi stok hp, kasir hp android">
+  <meta name="author" content="KonterPro">
+  
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="KonterPro - Kelola Toko HP Jadi Lebih Mudah & Rapi">
+  <meta property="og:description" content="Solusi kasir digital dan manajemen stok HP, aksesori, hingga servis HP khusus UMKM counter HP.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient Background Glows -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar">
+    <div class="container announcement-inner">
+      <span class="badge-promo">PROMO KHUSUS UMKM</span>
+      <p>🎉 Dapatkan <strong>Akses Penuh 14 Hari Gratis</strong> + Template Cetak Nota Servis & Garansi Toko!</p>
+      <a href="#daftar" class="announcement-link">Klaim Sekarang &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper" id="navbar">
+    <div class="container navbar-container">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="3" ry="3"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            <path d="M9 6h6"></path>
+            <path d="M9 10h6"></path>
+            <path d="M9 14h3"></path>
+          </svg>
+        </div>
+        <div class="logo-text">
+          Konter<span>Pro</span>
+          <span class="logo-tag">POS & IMEI</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" id="navLinks">
+        <a href="#masalah" class="nav-link">Masalah & Solusi</a>
+        <a href="#fitur" class="nav-link">Fitur Unggulan</a>
+        <a href="#simulator" class="nav-link">Demo Kasir & IMEI</a>
+        <a href="#kalkulator" class="nav-link">Kalkulator Hemat</a>
+        <a href="#harga" class="nav-link">Paket Harga</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <!-- Nav CTA -->
+      <div class="nav-actions">
+        <button class="btn btn-ghost" id="btnOpenLoginModal">Masuk</button>
+        <a href="#daftar" class="btn btn-primary btn-glow">
+          <span>Coba Gratis 14 Hari</span>
+          <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+        <!-- Hamburger Menu Button -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Buka Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav" id="mobileNav">
+      <div class="mobile-nav-inner">
+        <a href="#masalah" class="mobile-nav-link">Masalah & Solusi</a>
+        <a href="#fitur" class="mobile-nav-link">Fitur Unggulan</a>
+        <a href="#simulator" class="mobile-nav-link">Demo Kasir & IMEI</a>
+        <a href="#kalkulator" class="mobile-nav-link">Kalkulator Hemat</a>
+        <a href="#harga" class="mobile-nav-link">Paket Harga</a>
+        <a href="#faq" class="mobile-nav-link">FAQ</a>
+        <div class="mobile-nav-divider"></div>
+        <div class="mobile-nav-btns">
+          <button class="btn btn-ghost w-full" id="btnOpenLoginModalMobile">Masuk ke Akun</button>
+          <a href="#daftar" class="btn btn-primary w-full text-center">Coba Gratis 14 Hari</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <!-- Trust Badge Pill -->
+          <div class="pill-badge">
+            <span class="pill-dot"></span>
+            <span class="pill-text">#1 Aplikasi Khusus Counter HP & UMKM Gadget</span>
+            <span class="pill-icon">📱</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="hero-title">
+            Kelola Toko HP Jadi Lebih Mudah, <span class="gradient-text">Stok & Penjualan Rapi</span> dalam Satu Aplikasi
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="hero-subtitle">
+            Solusi kasir digital dan manajemen stok perangkat, aksesori, hingga servis HP yang dirancang khusus untuk UMKM counter HP. Anti salah catat IMEI, anti rugi selisih barang.
+          </p>
+
+          <!-- Hero CTAs -->
+          <div class="hero-cta-group">
+            <a href="#daftar" class="btn btn-primary btn-lg btn-glow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              <span>Coba Gratis 14 Hari</span>
+            </a>
+            <a href="#simulator" class="btn btn-secondary btn-lg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+              <span>Lihat Demo Aplikasi</span>
+            </a>
+          </div>
+
+          <!-- Social Proof & Highlights -->
+          <div class="hero-proof-strip">
+            <div class="proof-avatars">
+              <div class="avatar-group">
+                <span class="avatar-chip" style="background:#3b82f6;">H</span>
+                <span class="avatar-chip" style="background:#10b981;">R</span>
+                <span class="avatar-chip" style="background:#f59e0b;">B</span>
+                <span class="avatar-chip" style="background:#8b5cf6;">A</span>
+              </div>
+              <div class="proof-rating">
+                <div class="stars">★★★★★</div>
+                <p><strong>4.9/5</strong> dari <strong>2.500+</strong> Counter HP</p>
+              </div>
+            </div>
+            <div class="proof-features">
+              <div class="proof-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Support Thermal Bluetooth</span>
+              </div>
+              <div class="proof-feature-item">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Kirim Struk WhatsApp</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual / Live Interactive Mockup Frame -->
+        <div class="hero-visual">
+          <div class="device-mockup-card glass-card">
+            <!-- Mockup Header -->
+            <div class="mockup-topbar">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="mockup-title-bar">
+                <span class="status-live-badge">ONLINE</span>
+                <span>KonterPro POS v2.4 • Toko Berkah Cell</span>
+              </div>
+              <div class="mockup-time" id="heroClock">15:42 WIB</div>
+            </div>
+
+            <!-- Mockup Content Dashboard -->
+            <div class="mockup-screen">
+              <!-- Quick Stats Bar -->
+              <div class="mockup-stats-row">
+                <div class="mini-stat-card">
+                  <span class="stat-label">Penjualan Hari Ini</span>
+                  <span class="stat-val text-emerald">Rp 8.450.000</span>
+                  <span class="stat-sub">↑ 14 transaksi (6 unit HP)</span>
+                </div>
+                <div class="mini-stat-card">
+                  <span class="stat-label">Laba Bersih Real-Time</span>
+                  <span class="stat-val text-cyan">Rp 1.320.000</span>
+                  <span class="stat-sub">Margin 15.6%</span>
+                </div>
+              </div>
+
+              <!-- Interactive Scan IMEI Box in Mockup -->
+              <div class="mockup-scanner-box">
+                <div class="scanner-header">
+                  <div class="scanner-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                      <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
+                      <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
+                      <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
+                      <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
+                      <line x1="7" y1="12" x2="17" y2="12"></line>
+                    </svg>
+                    <span>Deteksi Barcode / Scan IMEI Unit</span>
+                  </div>
+                  <span class="badge-scanner-mode">Kamera Aktif</span>
+                </div>
+
+                <div class="scanner-viewport">
+                  <div class="scanner-laser"></div>
+                  <div class="scanned-unit-info">
+                    <div class="unit-icon">📱</div>
+                    <div class="unit-details">
+                      <div class="unit-name">Samsung Galaxy A54 5G (8/256GB)</div>
+                      <div class="unit-meta">
+                        <span class="imei-chip">IMEI 1: 356789012345678</span>
+                        <span class="warranty-chip">Garansi Resmi SEIN (12 Bln)</span>
+                      </div>
+                    </div>
+                    <div class="unit-price">
+                      <span class="price-val">Rp 5.499.000</span>
+                      <span class="stock-badge in-stock">Stok Tersedia</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recent Quick Activity Strip -->
+              <div class="mockup-recent-list">
+                <div class="recent-item">
+                  <span class="recent-icon qris">QRIS</span>
+                  <div class="recent-desc">
+                    <strong>Fast Charging Type-C 30W + Kabel</strong>
+                    <span>Pelanggan: Mas Dimas • Struk WA Terkirim</span>
+                  </div>
+                  <span class="recent-amount">+Rp 185.000</span>
+                </div>
+                <div class="recent-item">
+                  <span class="recent-icon cash">TUNAI</span>
+                  <div class="recent-desc">
+                    <strong>Ganti LCD iPhone 11 + Pasang Tempered</strong>
+                    <span>Servis Selesai • Teknisi: Dani</span>
+                  </div>
+                  <span class="recent-amount">+Rp 650.000</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Micro Cards -->
+            <div class="floating-chip chip-left">
+              <div class="chip-icon bg-emerald">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              </div>
+              <div class="chip-content">
+                <span>Struk Kasir Dicetak</span>
+                <strong>Thermal Bluetooth 58mm</strong>
+              </div>
+            </div>
+
+            <div class="floating-chip chip-right">
+              <div class="chip-icon bg-amber">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                  <line x1="12" y1="9" x2="12" y2="13"></line>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+              </div>
+              <div class="chip-content">
+                <span>Alert Stok Menipis</span>
+                <strong>Oppo Reno 8T sisa 1 unit!</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: PROBLEM & SOLUTION -->
+    <section class="section-padding problem-solution-section" id="masalah">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge badge-danger">TANTANGAN UMKM COUNTER HP</span>
+          <h2 class="section-title">Masalah yang Sering Bikin Pusing <br><span class="text-danger-gradient">Pemilik Counter HP</span></h2>
+          <p class="section-subtitle">
+            Banyak pemilik counter HP kehilangan jutaan rupiah tiap bulan karena stok selisih, IMEI tertukar, dan buku kas manual yang tidak akurat.
+          </p>
+        </div>
+
+        <!-- Problem & Solution Comparison Cards -->
+        <div class="problems-grid">
+          <!-- Problem 1 -->
+          <div class="comparison-card">
+            <div class="card-problem">
+              <div class="problem-tag">
+                <span class="icon-danger">✕</span> Masalah Umum
+              </div>
+              <h3 class="problem-title">Pencatatan IMEI Berantakan</h3>
+              <p class="problem-desc">
+                Sering lupa mencatat nomor IMEI unit HP yang keluar-masuk. Saat customer komplain garansi toko atau distributor, tidak ada bukti riwayat unit yang valid.
+              </p>
+            </div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </div>
+            <div class="card-solution">
+              <div class="solution-tag">
+                <span class="icon-success">✓</span> Solusi KonterPro
+              </div>
+              <h3 class="solution-title">Auto-Lock Scan IMEI & Garansi</h3>
+              <p class="solution-desc">
+                Sistem wajib scan nomor IMEI sebelum barang masuk atau terjual. Riwayat serial, tanggal beli, dan garansi tersimpan otomatis di database digital.
+              </p>
+            </div>
+          </div>
+
+          <!-- Problem 2 -->
+          <div class="comparison-card">
+            <div class="card-problem">
+              <div class="problem-tag">
+                <span class="icon-danger">✕</span> Masalah Umum
+              </div>
+              <h3 class="problem-title">Stok Aksesori Sering Selisih</h3>
+              <p class="problem-desc">
+                Perkakas kecil, tempered glass, casing, hingga kabel data sering hilang dan tidak terpantau. Sulit membedakan varian RAM/ROM dan warna HP yang menumpuk di etalase.
+              </p>
+            </div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </div>
+            <div class="card-solution">
+              <div class="solution-tag">
+                <span class="icon-success">✓</span> Solusi KonterPro
+              </div>
+              <h3 class="solution-title">Multi-Varian & Alert Stok Menipis</h3>
+              <p class="solution-desc">
+                Rapi memisahkan varian warna, storage, dan kategori aksesori. Notifikasi otomatis saat stok mendekati batas minimum agar tidak kehabisan barang laris.
+              </p>
+            </div>
+          </div>
+
+          <!-- Problem 3 -->
+          <div class="comparison-card">
+            <div class="card-problem">
+              <div class="problem-tag">
+                <span class="icon-danger">✕</span> Masalah Umum
+              </div>
+              <h3 class="problem-title">Buku Kas Masih Manual</h3>
+              <p class="problem-desc">
+                Capek rekap malam-malam di buku tulis. Sulit menghitung keuntungan bersih harian dan bulanan karena harga modal (HPP) fluktuatif dan bercampur dengan uang pribadi.
+              </p>
+            </div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </div>
+            <div class="card-solution">
+              <div class="solution-tag">
+                <span class="icon-success">✓</span> Solusi KonterPro
+              </div>
+              <h3 class="solution-title">Laporan Laba/Rugi Real-Time</h3>
+              <p class="solution-desc">
+                Omzet, modal (HPP), komisi karyawan, dan laba bersih terhitung otomatis setiap detik. Bisa dipantau langsung dari HP pemilik toko dari mana saja.
+              </p>
+            </div>
+          </div>
+
+          <!-- Problem 4 -->
+          <div class="comparison-card">
+            <div class="card-problem">
+              <div class="problem-tag">
+                <span class="icon-danger">✕</span> Masalah Umum
+              </div>
+              <h3 class="problem-title">Klaim Garansi & Nota Servis Hilang</h3>
+              <p class="problem-desc">
+                Nota kertas servis gampang sobek atau hilang di tangan pelanggan. Terjadi perdebatan garansi toko HP second tanpa bukti kesepakatan tertulis.
+              </p>
+            </div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </div>
+            <div class="card-solution">
+              <div class="solution-tag">
+                <span class="icon-success">✓</span> Solusi KonterPro
+              </div>
+              <h3 class="solution-title">E-Receipt WhatsApp & Garansi Digital</h3>
+              <p class="solution-desc">
+                Kirim nota digital resmi & syarat klaim garansi langsung ke WhatsApp pelanggan dalam 1 kali klik. Riwayat servis tersimpan permanen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: FITUR UNGGULAN -->
+    <section class="section-padding features-section" id="fitur">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge badge-cyan">FITUR LENGKAP COUNTER HP</span>
+          <h2 class="section-title">Semua Kebutuhan Toko HP, <br><span class="gradient-text">Terintegrasi Sempurna</span></h2>
+          <p class="section-subtitle">
+            Dibuat dari riset mendalam bersama ratusan pemilik konter HP di ITC Roxy, WTC Surabaya, hingga counter pinggir jalan.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature Card 1 -->
+          <div class="feature-card glass-card">
+            <div class="feature-icon-wrapper icon-emerald">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                <line x1="7" y1="8" x2="7" y2="16"></line>
+                <line x1="11" y1="8" x2="11" y2="16"></line>
+                <line x1="15" y1="8" x2="15" y2="16"></line>
+                <line x1="17" y1="8" x2="17" y2="12"></line>
+              </svg>
+            </div>
+            <h3 class="feature-card-title">Pencatatan & Scan IMEI Otomatis</h3>
+            <p class="feature-card-desc">
+              Catat garansi dan nomor IMEI tiap unit HP saat barang masuk dan keluar. Sistem memvalidasi keunikan IMEI sehingga tidak ada unit duplikat atau tertukar.
+            </p>
+            <ul class="feature-checklist">
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Support Scan Kamera HP & Scanner Barcode USB</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Support Dual-SIM IMEI 1 & IMEI 2</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Riwayat asal supplier & garansi toko per unit</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Feature Card 2 -->
+          <div class="feature-card glass-card">
+            <div class="feature-icon-wrapper icon-cyan">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+                <path d="M6 8h.01"></path>
+                <path d="M10 8h.01"></path>
+                <path d="M14 8h.01"></path>
+              </svg>
+            </div>
+            <h3 class="feature-card-title">Kasir Digital & Cetak Struk (POS)</h3>
+            <p class="feature-card-desc">
+              Transaksi kasir super kilat tanpa antre panjang. Terima pembayaran Tunai, QRIS Dinamis, Transfer Bank, hingga Split Payment dengan mudah.
+            </p>
+            <ul class="feature-checklist">
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Cetak printer thermal Bluetooth 58mm / 80mm</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Kirim struk nota otomatis via WhatsApp Web/API</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Cetak barcode harga & stiker IMEI toko</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Feature Card 3 -->
+          <div class="feature-card glass-card">
+            <div class="feature-icon-wrapper icon-amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+            </div>
+            <h3 class="feature-card-title">Manajemen Stok HP & Aksesori</h3>
+            <p class="feature-card-desc">
+              Sistem otomatis memisahkan stok berdasarkan varian warna, RAM/ROM, unit baru vs second (grade), hingga kategori aksesori & suku cadang.
+            </p>
+            <ul class="feature-checklist">
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Katalog HP Baru & HP Bekas (Grade A/B/C)</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Alert notifikasi stok menipis otomatis</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Stock Opname cepat tinggal scan barcode etalase</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Feature Card 4 -->
+          <div class="feature-card glass-card">
+            <div class="feature-icon-wrapper icon-purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <h3 class="feature-card-title">Laporan Laba/Rugi & Garansi Toko</h3>
+            <p class="feature-card-desc">
+              Pantau omzet, modal beli (HPP), dan laba bersih secara real-time. Kelola klaim garansi pelanggan dan servis tanpa ribet cari arsip nota lama.
+            </p>
+            <ul class="feature-checklist">
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Kalkulasi Laba Bersih otomatis (Harga - HPP)</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Modul Nota Servis HP & hitung komisi teknisi</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Export laporan keuangan ke PDF & Excel 1 Klik</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: LIVE INTERACTIVE DEMO & IMEI SIMULATOR -->
+    <section class="section-padding simulator-section" id="simulator">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge badge-emerald">SIMULASI INTERAKTIF LANGSUNG</span>
+          <h2 class="section-title">Coba Sendiri Kemudahan <br><span class="gradient-text">Kasir & Scan IMEI KonterPro</span></h2>
+          <p class="section-subtitle">
+            Klik tombol di bawah untuk mencoba simulasi scan IMEI, transaksi kasir, dan hasil cetak struk nota instan.
+          </p>
+        </div>
+
+        <div class="simulator-wrapper glass-card">
+          <div class="simulator-grid">
+            <!-- Left: Interactive POS Cashier Simulation -->
+            <div class="simulator-controls">
+              <div class="sim-step-badge">Langkah 1 & 2: Pilih Unit / Scan IMEI</div>
+              
+              <div class="sim-action-row">
+                <label class="sim-label">Pilih Contoh Unit untuk Di-Scan:</label>
+                <div class="sample-btn-group">
+                  <button type="button" class="btn-sample-unit active" data-unit="iphone13">
+                    <span class="unit-pill-tag">HP Baru</span>
+                    <strong>iPhone 13 128GB</strong>
+                    <small>Stok: 3 Unit</small>
+                  </button>
+                  <button type="button" class="btn-sample-unit" data-unit="redminote12">
+                    <span class="unit-pill-tag">HP Baru</span>
+                    <strong>Redmi Note 12 6/128</strong>
+                    <small>Stok: 5 Unit</small>
+                  </button>
+                  <button type="button" class="btn-sample-unit" data-unit="samsunga54">
+                    <span class="unit-pill-tag">HP Second</span>
+                    <strong>Galaxy A54 5G Mulus</strong>
+                    <small>Stok: 1 Unit</small>
+                  </button>
+                </div>
+              </div>
+
+              <div class="sim-scan-input-box">
+                <label class="sim-label">Nomor IMEI Terdeteksi:</label>
+                <div class="input-with-action">
+                  <input type="text" id="simImeiInput" class="sim-input" value="356789012345678" readonly>
+                  <button type="button" class="btn btn-secondary btn-sm" id="btnTriggerScan">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                      <circle cx="12" cy="13" r="4"></circle>
+                    </svg>
+                    <span>Simulasi Scan Ulang</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Customer Info & Payment Method -->
+              <div class="sim-step-badge">Langkah 3: Pembeli & Metode Bayar</div>
+              <div class="sim-form-row">
+                <div class="sim-field">
+                  <label class="sim-label">Nama Pelanggan:</label>
+                  <input type="text" id="simCustName" class="sim-input" value="Budi Santoso">
+                </div>
+                <div class="sim-field">
+                  <label class="sim-label">WhatsApp Pelanggan:</label>
+                  <input type="text" id="simCustWa" class="sim-input" value="081298765432">
+                </div>
+              </div>
+
+              <div class="sim-payment-options">
+                <label class="sim-label">Metode Pembayaran:</label>
+                <div class="pay-method-pills">
+                  <label class="pay-pill">
+                    <input type="radio" name="payMethod" value="QRIS" checked>
+                    <span>⚡ QRIS Dinamis</span>
+                  </label>
+                  <label class="pay-pill">
+                    <input type="radio" name="payMethod" value="TUNAI">
+                    <span>💵 Tunai (Cash)</span>
+                  </label>
+                  <label class="pay-pill">
+                    <input type="radio" name="payMethod" value="TRANSFER">
+                    <span>🏦 Transfer BCA/Mandiri</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="sim-summary-box">
+                <div class="summary-line">
+                  <span>Harga Jual:</span>
+                  <strong id="simSellPrice">Rp 10.499.000</strong>
+                </div>
+                <div class="summary-line">
+                  <span>Modal Toko (HPP):</span>
+                  <span id="simHppPrice" class="text-muted">Rp 9.600.000</span>
+                </div>
+                <div class="summary-line highlight">
+                  <span>Estimasi Laba Bersih Toko:</span>
+                  <strong id="simProfit" class="text-emerald">+Rp 899.000</strong>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-primary btn-lg w-full btn-glow" id="btnSimProcess">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                  <path d="M6 9V2h12v7"></path>
+                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                  <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                <span>Proses Transaksi & Cetak Struk</span>
+              </button>
+            </div>
+
+            <!-- Right: Live Thermal Struk Receipt & WhatsApp Preview -->
+            <div class="simulator-receipt-preview">
+              <div class="receipt-mode-toggle">
+                <button type="button" class="btn-receipt-tab active" data-tab="thermal">
+                  🖨️ Struk Thermal 58mm
+                </button>
+                <button type="button" class="btn-receipt-tab" data-tab="whatsapp">
+                  💬 Struk WhatsApp
+                </button>
+              </div>
+
+              <!-- Thermal Paper View -->
+              <div class="thermal-receipt-paper" id="thermalReceiptView">
+                <div class="thermal-tear-top"></div>
+                <div class="receipt-header">
+                  <h4>BERKAH CELLULAR</h4>
+                  <p>ITC Roxy Mas Lt. 2 No. 45 Jakarta</p>
+                  <p>Telp / WA: 0812-3456-7890</p>
+                  <div class="receipt-divider-dash">=============================</div>
+                  <div class="receipt-meta-row">
+                    <span id="receiptNo">NO: KP-20260924-001</span>
+                    <span id="receiptDate">24/09/2026 15:45</span>
+                  </div>
+                  <div class="receipt-meta-row">
+                    <span>Kasir: Kasir 1 (Admin)</span>
+                    <span id="receiptCust">Cust: Budi Santoso</span>
+                  </div>
+                  <div class="receipt-divider-dash">-----------------------------</div>
+                </div>
+
+                <div class="receipt-items">
+                  <div class="receipt-item-row">
+                    <strong id="receiptItemName">iPhone 13 128GB Midnight</strong>
+                    <span id="receiptItemTotal">10.499.000</span>
+                  </div>
+                  <div class="receipt-item-sub">
+                    1 x <span id="receiptItemPrice">10.499.000</span>
+                  </div>
+                  <div class="receipt-imei-box">
+                    <span>*IMEI 1: <strong id="receiptItemImei">356789012345678</strong></span>
+                    <span>*Status: Unit Baru (Segel Box)</span>
+                    <span>*Garansi: Garansi Resmi iBox 1 Tahun</span>
+                  </div>
+                </div>
+
+                <div class="receipt-divider-dash">-----------------------------</div>
+                <div class="receipt-totals">
+                  <div class="receipt-total-row">
+                    <span>Subtotal</span>
+                    <span id="receiptSubtotal">Rp 10.499.000</span>
+                  </div>
+                  <div class="receipt-total-row">
+                    <span>Diskon Promo</span>
+                    <span>Rp 0</span>
+                  </div>
+                  <div class="receipt-total-row bold">
+                    <span>TOTAL BAYAR</span>
+                    <span id="receiptGrandTotal">Rp 10.499.000</span>
+                  </div>
+                  <div class="receipt-total-row">
+                    <span id="receiptPayMethodLabel">Metode: QRIS Dinamis</span>
+                    <span class="text-success">[LUNAS]</span>
+                  </div>
+                </div>
+
+                <div class="receipt-divider-dash">=============================</div>
+                <div class="receipt-footer">
+                  <p class="receipt-thanks">TERIMA KASIH TELAH BERBELANJA!</p>
+                  <p>Simpan struk ini sebagai bukti sah klaim garansi toko.</p>
+                  <p class="receipt-powered">Powered by <strong>KonterPro POS</strong></p>
+                </div>
+                <div class="thermal-tear-bottom"></div>
+              </div>
+
+              <!-- WhatsApp Chat Mockup View (Initially hidden) -->
+              <div class="whatsapp-mockup-view" id="whatsappReceiptView" style="display: none;">
+                <div class="wa-chat-header">
+                  <div class="wa-avatar">📱</div>
+                  <div class="wa-header-info">
+                    <strong>Berkah Cellular (Official)</strong>
+                    <span>Online • KonterPro Bot</span>
+                  </div>
+                </div>
+                <div class="wa-chat-body">
+                  <div class="wa-message-bubble">
+                    <p>Halo Kak <strong id="waCustName">Budi Santoso</strong>! 👋</p>
+                    <p>Terima kasih telah berbelanja di <strong>Berkah Cellular</strong>. Berikut rincian nota & garansi digital unit Anda:</p>
+                    <div class="wa-receipt-box">
+                      📄 <strong>E-NOTA DIGITAL RESMI</strong><br>
+                      No: <span id="waReceiptNo">KP-20260924-001</span><br>
+                      Unit: <strong id="waUnitName">iPhone 13 128GB Midnight</strong><br>
+                      IMEI: <span id="waImei">356789012345678</span><br>
+                      Total: <span id="waTotal">Rp 10.499.000</span> (LUNAS)<br>
+                      Garansi: Aktif s/d 24 Sept 2027
+                    </div>
+                    <p class="wa-footer-note">Simpan chat ini sebagai bukti garansi. Butuh bantuan? Cukup balas pesan ini ya kak! 🙏</p>
+                    <span class="wa-time" id="waTime">15:46 ✓✓</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: KALKULATOR HEMAT & POTENSI KEUNTUNGAN -->
+    <section class="section-padding calculator-section" id="kalkulator">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge badge-amber">SIMULASI PENGHEMATAN & ROI</span>
+          <h2 class="section-title">Hitung Waktu & Uang yang Bisa <br><span class="text-amber-gradient">Kamu Hemat Setiap Bulan</span></h2>
+          <p class="section-subtitle">
+            Geser slider di bawah sesuai dengan rata-rata penjualan counter HP kamu untuk melihat kalkulasi efisiensinya.
+          </p>
+        </div>
+
+        <div class="calculator-card glass-card">
+          <div class="calc-grid">
+            <!-- Left: Sliders -->
+            <div class="calc-sliders">
+              <!-- Slider 1 -->
+              <div class="slider-group">
+                <div class="slider-label-row">
+                  <label for="sliderHpDaily" class="slider-label">Penjualan Unit HP per Hari:</label>
+                  <span class="slider-value-badge" id="valHpDaily">5 Unit / hari</span>
+                </div>
+                <input type="range" id="sliderHpDaily" min="1" max="30" value="5" class="custom-range">
+                <div class="range-marks">
+                  <span>1 Unit</span>
+                  <span>15 Unit</span>
+                  <span>30+ Unit</span>
+                </div>
+              </div>
+
+              <!-- Slider 2 -->
+              <div class="slider-group">
+                <div class="slider-label-row">
+                  <label for="sliderAccDaily" class="slider-label">Transaksi Aksesori, Pulsa & Servis / Hari:</label>
+                  <span class="slider-value-badge" id="valAccDaily">25 Transaksi / hari</span>
+                </div>
+                <input type="range" id="sliderAccDaily" min="5" max="150" value="25" class="custom-range">
+                <div class="range-marks">
+                  <span>5 Tx</span>
+                  <span>75 Tx</span>
+                  <span>150+ Tx</span>
+                </div>
+              </div>
+
+              <div class="calc-tip-box">
+                <div class="tip-icon">💡</div>
+                <div class="tip-text">
+                  <strong>Tahukah Kamu?</strong> Rata-rata counter HP tanpa software khusus kehilangan <strong>2-3 jam per malam</strong> hanya untuk mencocokkan nota kertas dan mencari sisa unit IMEI.
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Output Results -->
+            <div class="calc-results">
+              <div class="result-box primary-result">
+                <span class="result-label">Waktu Rekap Yang Dihemat</span>
+                <div class="result-val-row">
+                  <span class="result-big-number text-emerald" id="calcSavedHours">52 Jam</span>
+                  <span class="result-period">/ bulan</span>
+                </div>
+                <p class="result-desc">Setara dengan <strong>6.5 hari kerja bebas pusing rekap malam</strong> bersama keluarga.</p>
+              </div>
+
+              <div class="results-subgrid">
+                <div class="result-box-mini">
+                  <span class="mini-label">Kebocoran Stok / IMEI Tertukar Dicegah</span>
+                  <span class="mini-number text-cyan" id="calcPreventLoss">Rp 3.500.000</span>
+                  <span class="mini-note">Estimasi per bulan</span>
+                </div>
+                <div class="result-box-mini">
+                  <span class="mini-label">Kecepatan Transaksi Kasir</span>
+                  <span class="mini-number text-amber">4x Lebih Cepat</span>
+                  <span class="mini-note">Pelanggan tidak antre</span>
+                </div>
+              </div>
+
+              <a href="#daftar" class="btn btn-primary w-full text-center btn-glow">
+                Mulai Hemat Waktu & Uang Sekarang &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: PRICING / PAKET HARGA -->
+    <section class="section-padding pricing-section" id="harga">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge badge-cyan">BIAYA TERJANGKAU UNTUK UMKM</span>
+          <h2 class="section-title">Investasi Cerdas, <br><span class="gradient-text">Keuntungan Berlipat</span></h2>
+          <p class="section-subtitle">
+            Pilih paket yang paling pas untuk skala counter HP kamu. Tanpa biaya tersembunyi, batalkan kapan saja.
+          </p>
+
+          <!-- Billing Period Switch -->
+          <div class="pricing-toggle-wrapper">
+            <span class="toggle-label" id="labelMonthly">Bayar Bulanan</span>
+            <button class="pricing-switch" id="pricingSwitch" role="switch" aria-checked="false">
+              <span class="switch-handle"></span>
+            </button>
+            <span class="toggle-label" id="labelAnnually">
+              Bayar Tahunan
+              <span class="badge-discount">HEMAT 25% 🔥</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Pricing Cards Grid -->
+        <div class="pricing-grid">
+          <!-- Card 1: Paket Pemula (Trial) -->
+          <div class="pricing-card glass-card">
+            <div class="pricing-card-header">
+              <span class="plan-badge">UJI COBA</span>
+              <h3 class="plan-name">Paket Pemula</h3>
+              <p class="plan-desc">Cocok untuk mencoba seluruh fitur kasir & scan IMEI sebelum berlangganan.</p>
+              <div class="plan-price-box">
+                <span class="price-currency">Rp</span>
+                <span class="price-amount">0</span>
+                <span class="price-period">/ 14 Hari</span>
+              </div>
+            </div>
+
+            <ul class="plan-features">
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Full Akses 14 Hari Semua Fitur</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>1 Akun Cabang & 1 Akun Kasir</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Pencatatan IMEI & Stok HP Dasar</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Kirim Struk WhatsApp & Cetak Bluetooth</span>
+              </li>
+              <li class="feature-disabled">
+                <span>✕ Laporan Keuangan Lengkap & Export</span>
+              </li>
+            </ul>
+
+            <div class="pricing-card-footer">
+              <a href="#daftar" class="btn btn-secondary w-full text-center">Mulai Coba Gratis</a>
+            </div>
+          </div>
+
+          <!-- Card 2: Paket Bulanan (Popular) -->
+          <div class="pricing-card glass-card popular-card">
+            <div class="popular-ribbon">⭐ PALING POPULER</div>
+            <div class="pricing-card-header">
+              <span class="plan-badge badge-cyan">LANGGANAN FLEKSIBEL</span>
+              <h3 class="plan-name">Paket Bulanan</h3>
+              <p class="plan-desc">Solusi lengkap untuk counter HP aktif yang ingin operasional rapi setiap hari.</p>
+              <div class="plan-price-box">
+                <span class="price-currency">Rp</span>
+                <span class="price-amount" id="priceMonthlyVal">99.000</span>
+                <span class="price-period" id="priceMonthlyPeriod">/ bulan</span>
+              </div>
+            </div>
+
+            <ul class="plan-features">
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span><strong>Scan IMEI Tanpa Batas</strong> (Unlimited)</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span><strong>2 Akun Kasir</strong> + Hak Akses Owner</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Laporan Keuangan & Laba/Rugi Real-Time</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Multi-Varian Stok (Warna, RAM/ROM, Bekas)</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Cetak Thermal Bluetooth & Struk WA</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Bantuan Teknis via WhatsApp</span>
+              </li>
+            </ul>
+
+            <div class="pricing-card-footer">
+              <a href="#daftar" class="btn btn-primary w-full text-center btn-glow">Pilih Paket Bulanan</a>
+            </div>
+          </div>
+
+          <!-- Card 3: Paket Tahunan (Best Value) -->
+          <div class="pricing-card glass-card">
+            <div class="pricing-card-header">
+              <span class="plan-badge badge-amber">HEMAT 25% TAHUNAN</span>
+              <h3 class="plan-name">Paket Tahunan</h3>
+              <p class="plan-desc">Pilihan terbaik juragan konter: bebas cabang, bebas kasir, dan support VIP prioritas.</p>
+              <div class="plan-price-box">
+                <span class="price-currency">Rp</span>
+                <span class="price-amount" id="priceAnnualVal">899.000</span>
+                <span class="price-period" id="priceAnnualPeriod">/ tahun</span>
+              </div>
+              <div class="plan-saving-sub" id="annualSavingSub">Setara Rp 74.900/bulan (Hemat Rp 289.000)</div>
+            </div>
+
+            <ul class="plan-features">
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span><strong>Semua Fitur Paket Bulanan</strong></span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span><strong>Bebas Tambah Cabang & Akun Kasir</strong></span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Modul Nota Servis HP & Garansi Khusus</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Export Laporan Pajak / Akuntansi Excel & PDF</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span><strong>Prioritas Dukungan Teknis 24/7</strong></span>
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Sesi Panduan Onboarding 1-on-1 Langsung</span>
+              </li>
+            </ul>
+
+            <div class="pricing-card-footer">
+              <a href="#daftar" class="btn btn-secondary w-full text-center">Pilih Paket Tahunan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: TESTIMONIALS / CERITA PEMILIK COUNTER -->
+    <section class="section-padding testimonials-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge badge-emerald">CERITA MITRA UMKM</span>
+          <h2 class="section-title">Dipercaya Oleh 2.500+ Pemilik <br><span class="gradient-text">Counter HP di Seluruh Indonesia</span></h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Testimonial 1 -->
+          <div class="testi-card glass-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">
+              "Dulu paling pusing kalau ada customer komplain garansi HP second, bonnya sering ilang. Sejak pakai KonterPro, tinggal ketik nomor IMEI, riwayat beli & garansinya langsung muncul detik itu juga. Juara banget!"
+            </p>
+            <div class="testi-author">
+              <div class="author-avatar" style="background:#3b82f6;">H</div>
+              <div class="author-info">
+                <strong>Mas Hendra Pratama</strong>
+                <span>Owner Bintang Phone • ITC Roxy Mas Jakarta</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testi-card glass-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">
+              "Toko saya jual aksesori sama servis HP juga. Fitur alert stok menipis ngebantu banget pas stok tempered glass atau kabel fast charging mau habis. Rekap kasir tiap malam selesai cuma 5 menit."
+            </p>
+            <div class="testi-author">
+              <div class="author-avatar" style="background:#10b981;">R</div>
+              <div class="author-info">
+                <strong>Mbak Rina Wulandari</strong>
+                <span>Sentral Gadget • WTC Surabaya</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testi-card glass-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">
+              "Awalnya ragu karena kasir saya gaptek. Ternyata aplikasinya enteng banget, bisa dipasang di tablet Android murah, dan langsung konek ke printer thermal Bluetooth. Support CS-nya juga ramah banget."
+            </p>
+            <div class="testi-author">
+              <div class="author-avatar" style="background:#f59e0b;">D</div>
+              <div class="author-info">
+                <strong>Koh David Chandra</strong>
+                <span>Berkah Jaya Cell • Medan Gadget Center</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: LEAD CAPTURE FORM / REGISTRASI TRIAL -->
+    <section class="section-padding register-section" id="daftar">
+      <div class="container">
+        <div class="register-card glass-card">
+          <div class="register-grid">
+            <!-- Left: Value Prop -->
+            <div class="register-info">
+              <span class="section-badge badge-emerald">DAFTAR SEKARANG</span>
+              <h2 class="register-title">Siap Digitalkan Counter HP Kamu Hari Ini?</h2>
+              <p class="register-subtitle">
+                Bergabunglah bersama ribuan pemilik toko HP lainnya. Nikmati kemudahan catat IMEI, kasir anti-ribet, dan laporan keuangan rapi.
+              </p>
+
+              <div class="trial-perks">
+                <div class="perk-item">
+                  <div class="perk-icon">⚡</div>
+                  <div class="perk-text">
+                    <strong>14 Hari Gratis Full Akses</strong>
+                    <span>Tanpa potongan biaya, tanpa perlu kartu kredit.</span>
+                  </div>
+                </div>
+                <div class="perk-item">
+                  <div class="perk-icon">🚀</div>
+                  <div class="perk-text">
+                    <strong>Setup Kilat 2 Menit</strong>
+                    <span>Toko langsung siap jualan & scan barcode IMEI.</span>
+                  </div>
+                </div>
+                <div class="perk-item">
+                  <div class="perk-icon">🤝</div>
+                  <div class="perk-text">
+                    <strong>Dipandu Tim Teknis via WhatsApp</strong>
+                    <span>Kami bantu setting sampai printer thermal terhubung.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Registration Form -->
+            <div class="register-form-box">
+              <form id="leadRegisterForm" class="lead-form">
+                <h3 class="form-heading">Formulir Pendaftaran Trial</h3>
+                <p class="form-subheading">Isi data singkat toko untuk membuat akun kasir instan:</p>
+
+                <div class="form-group">
+                  <label for="regStoreName">Nama Toko / Counter HP <span class="req">*</span></label>
+                  <input type="text" id="regStoreName" name="storeName" placeholder="Contoh: Berkah Cell Roxy" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="regOwnerName">Nama Pemilik <span class="req">*</span></label>
+                  <input type="text" id="regOwnerName" name="ownerName" placeholder="Contoh: Hendra Pratama" required>
+                </div>
+
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label for="regPhone">Nomor WhatsApp <span class="req">*</span></label>
+                    <input type="tel" id="regPhone" name="phone" placeholder="Contoh: 08123456789" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="regEmail">Email Aktif <span class="req">*</span></label>
+                    <input type="email" id="regEmail" name="email" placeholder="Contoh: hendra@gmail.com" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="regBranches">Jumlah Cabang Toko Saat Ini</label>
+                  <select id="regBranches" name="branches">
+                    <option value="1">1 Cabang (Toko Utama)</option>
+                    <option value="2-3">2 - 3 Cabang</option>
+                    <option value="4+">Lebih dari 4 Cabang</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg w-full btn-glow" id="btnSubmitReg">
+                  <span>Daftar & Coba Gratis 14 Hari</span>
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                  </svg>
+                </button>
+
+                <p class="form-privacy">
+                  🔒 Data privasi toko Anda aman & terenkripsi. Kami menghormati kerahasiaan stok & omzet bisnis Anda.
+                </p>
+              </form>
+
+              <!-- Form Success State (Initially hidden) -->
+              <div class="form-success-box" id="formSuccessBox" style="display: none;">
+                <div class="success-icon-big">🎉</div>
+                <h3>Pendaftaran Trial Berhasil!</h3>
+                <p>Selamat datang di <strong>KonterPro</strong>! Akun uji coba 14 hari Anda telah aktif.</p>
+                <div class="success-details-card">
+                  <p>Detail login & link download aplikasi telah kami kirimkan ke WhatsApp <strong id="successWaTarget">0812xxxxxxx</strong>.</p>
+                </div>
+                <button type="button" class="btn btn-secondary w-full" id="btnResetForm">Daftarkan Toko Lain</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: FAQ -->
+    <section class="section-padding faq-section" id="faq">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge badge-cyan">TANYA JAWAB UMUM</span>
+          <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+          <p class="section-subtitle">Punya pertanyaan seputar KonterPro? Temukan jawabannya di sini.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item glass-card">
+            <button class="faq-question" type="button">
+              <span>Apakah KonterPro butuh beli komputer / hardware mahal?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Tidak perlu sama sekali! KonterPro bisa dijalankan langsung dari smartphone Android, tablet murah, laptop, maupun PC yang sudah ada di toko Anda. Untuk scan IMEI cukup gunakan kamera HP atau scanner barcode USB biasa.</p>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card">
+            <button class="faq-question" type="button">
+              <span>Bagaimana cara menghubungkan printer struk Bluetooth?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sangat mudah! Nyalakan Bluetooth di HP/Tablet Anda, pairing dengan printer thermal 58mm atau 80mm merk apa saja (seperti Panda, VSC, Iware, Blueprint, dll), lalu pilih 'Printer Bluetooth' di menu pengaturan KonterPro. Siap cetak dalam 1 menit!</p>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card">
+            <button class="faq-question" type="button">
+              <span>Bagaimana jika internet toko sedang lemot / offline?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>KonterPro memiliki fitur <em>Smart Offline Caching</em>. Transaksi kasir dan scan IMEI tetap bisa berjalan lancar saat sinyal terputus, dan data akan otomatis tersinkronisasi saat perangkat terhubung kembali ke internet.</p>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card">
+            <button class="faq-question" type="button">
+              <span>Apakah data nomor IMEI dan omzet toko saya aman?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sangat aman. Semua data tersimpan di server cloud berstandar enkripsi tinggi (SSL 256-bit) dengan backup harian otomatis. Kasir hanya bisa melihat menu kasir, sedangkan akses laporan keuangan & laba bersih hanya bisa dibuka oleh Akun Owner (Pemilik).</p>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card">
+            <button class="faq-question" type="button">
+              <span>Apakah bisa untuk counter yang melayani jasa servis HP juga?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Bisa banget! KonterPro sudah dilengkapi fitur Manajemen Servis HP: cetak tanda terima servis, status pengerjaan (Menunggu Sparepart / Selesai / Diambil), serta kalkulasi otomatis komisi teknisi servis Anda.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer-wrapper">
+    <div class="container footer-container">
+      <div class="footer-main">
+        <div class="footer-brand-col">
+          <a href="#" class="logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="5" y="2" width="14" height="20" rx="3" ry="3"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                <path d="M9 6h6"></path>
+                <path d="M9 10h6"></path>
+                <path d="M9 14h3"></path>
+              </svg>
+            </div>
+            <div class="logo-text">
+              Konter<span>Pro</span>
+            </div>
+          </a>
+          <p class="footer-desc">
+            Aplikasi kasir & manajemen inventaris khusus counter HP dan UMKM gadget nomor #1 di Indonesia.
+          </p>
+          <div class="footer-badges">
+            <span class="f-badge">🔒 Cloud SSL Encrypted</span>
+            <span class="f-badge">⚡ 99.9% Uptime SLA</span>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Navigasi Cepat</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Beranda</a></li>
+            <li><a href="#masalah">Masalah & Solusi</a></li>
+            <li><a href="#fitur">Fitur Unggulan</a></li>
+            <li><a href="#simulator">Demo Kasir & IMEI</a></li>
+            <li><a href="#kalkulator">Kalkulator Hemat</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Paket & Kontak</h4>
+          <ul class="footer-links">
+            <li><a href="#harga">Paket Bulanan</a></li>
+            <li><a href="#harga">Paket Tahunan</a></li>
+            <li><a href="#daftar">Daftar Trial 14 Hari</a></li>
+            <li><a href="https://wa.me/6281234567890" target="_blank" rel="noopener">WhatsApp Support CS</a></li>
+            <li><a href="#faq">Pusat Bantuan (FAQ)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Didukung Metode Bayar</h4>
+          <p class="footer-pay-desc">Terima semua jenis pembayaran di kasir Anda:</p>
+          <div class="payment-tags">
+            <span class="pay-tag">QRIS All Payment</span>
+            <span class="pay-tag">BCA</span>
+            <span class="pay-tag">Mandiri</span>
+            <span class="pay-tag">BRI</span>
+            <span class="pay-tag">GoPay</span>
+            <span class="pay-tag">OVO / DANA</span>
+            <span class="pay-tag">Tunai</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 KonterPro Technologies Indonesia. Seluruh hak cipta dilindungi undang-undang.</p>
+        <p class="footer-subtext">Dirancang dengan bangga untuk memajukan UMKM Counter HP di seluruh Nusantara.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal-overlay" id="loginModal" style="display: none;">
+    <div class="modal-card glass-card">
+      <button class="modal-close-btn" id="btnCloseLoginModal" aria-label="Tutup Modal">&times;</button>
+      <div class="modal-header">
+        <div class="modal-logo">Konter<span>Pro</span></div>
+        <h3>Masuk ke Dashboard Toko</h3>
+        <p>Akses akun kasir atau akun owner counter HP Anda:</p>
+      </div>
+      <form id="loginForm" class="modal-form">
+        <div class="form-group">
+          <label for="loginEmail">Email / Nomor WhatsApp</label>
+          <input type="text" id="loginEmail" placeholder="nama@email.com atau 0812xxxx" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPass">Kata Sandi</label>
+          <input type="password" id="loginPass" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-full btn-glow">Masuk Sekarang</button>
+      </form>
+      <div class="modal-footer">
+        <p>Belum punya akun? <a href="#daftar" id="linkGoToRegister">Daftar Trial 14 Hari</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING TOAST NOTIFICATION -->
+  <div class="toast-notification" id="appToast" style="display: none;">
+    <div class="toast-icon" id="toastIcon">✓</div>
+    <div class="toast-message" id="toastMessage">Notifikasi berhasil!</div>
+  </div>
+
+  <!-- JavaScript App Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
